@@ -26,7 +26,7 @@ export function crearNuevoProductoActions(producto)  {
         dispatch( nuevoProducto() )
 
         // Insertar en la APi
-        clienteAxios.post('/productos', producto)
+        clienteAxios.post('https://my-json-server.typicode.com/estevg/Crud-react-y-redux-hooks/productos', producto)
         .then(respuesta => {
             console.log(respuesta)
 
@@ -65,7 +65,7 @@ export function obtenerProductosActions(){
         dispatch( obtenerProductosComienzo() )
 
         
-            clienteAxios.get('/productos')
+            clienteAxios.get('https://my-json-server.typicode.com/estevg/Crud-react-y-redux-hooks/productos')
             .then(respuesta => {
                 // console.log(respuesta)
                 dispatch( descargaProductosExitosa(respuesta.data) )
@@ -102,7 +102,7 @@ export function borrarProductoAction(id) {
 
         // Eliminar desde la API
         
-        clienteAxios.delete(`/productos/${id}`)
+        clienteAxios.delete(`https://my-json-server.typicode.com/estevg/Crud-react-y-redux-hooks/productos/${id}`)
         .then(respuesta => {
             console.log(respuesta)
             dispatch( eliminarProductoExito(id) )
@@ -135,7 +135,7 @@ export function obtenerProductoEditarAction(id) {
         dispatch( obtenerProductoAction() );
 
         // Obtener el producto de la api
-        clienteAxios.get(`/productos/${id}`)
+        clienteAxios.get(`https://my-json-server.typicode.com/estevg/Crud-react-y-redux-hooks/productos/${id}`)
         .then(respuesta => {
             // console.log(respuesta.data)
             dispatch( obtenerProductoEditarExito(respuesta.data))
@@ -165,7 +165,7 @@ export function editarProductoAction(producto){
         dispatch( comenzarEdicionProducto() )
 
         // Consultar la API
-        clienteAxios.put(`/productos/${producto.id}`, producto)
+        clienteAxios.put(`https://my-json-server.typicode.com/estevg/Crud-react-y-redux-hooks/productos/${producto.id}`, producto)
         .then(respuesta => {
             console.log(respuesta)
             dispatch(editarProductoExito(respuesta.data))
