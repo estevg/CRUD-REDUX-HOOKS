@@ -1,0 +1,29 @@
+{
+  "productos": [
+    {
+      "id": 2,
+      "nombre": "Aprendiendo Redux Hooks",
+      "precio": "90"
+    },
+    {
+      "id": 3,
+      "nombre": "Aprendiendo Nodejs",
+      "precio": "5000"
+    },
+    {
+      "id": 4,
+      "nombre": "React",
+      "precio": "2000"
+    },
+    {
+      "id": 7,
+      "nombre": "Redux And React",
+      "precio": "15000"
+    },
+    {
+      "nombre": "Padre rico padre pobre",
+      "precio": "10000",
+      "id": 8
+    }
+  ]
+}
