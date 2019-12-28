@@ -26,15 +26,14 @@ export function crearNuevoProductoActions(producto)  {
         dispatch( nuevoProducto() )
 
         // Insertar en la APi
-        clienteAxios.post('https://my-json-server.typicode.com/estevg/Crud-react-y-redux-hooks/productos', producto)
+        clienteAxios.post('https://serene-scrubland-47940.herokuapp.com/productos', producto)
         .then(respuesta => {
             console.log(respuesta)
 
-            // Si se inserta correctamente 
             dispatch( agregarProductoExito( producto ))
         })
         .catch(error => {
-            console.log(error)
+            // console.log(error)
 
             // SI hay un error
             dispatch ( agregarProductoError ())
@@ -63,9 +62,7 @@ export function obtenerProductosActions(){
     return(dispatch) => {
 
         dispatch( obtenerProductosComienzo() )
-
-        
-            clienteAxios.get('https://my-json-server.typicode.com/estevg/Crud-react-y-redux-hooks/productos')
+            clienteAxios.get('https://serene-scrubland-47940.herokuapp.com/productos')
             .then(respuesta => {
                 // console.log(respuesta)
                 dispatch( descargaProductosExitosa(respuesta.data) )
@@ -74,10 +71,6 @@ export function obtenerProductosActions(){
                 // console.log(error)
                 dispatch ( descargaProductosError() )
             })
-        
-        
-
-
     }
 }
 
@@ -102,7 +95,7 @@ export function borrarProductoAction(id) {
 
         // Eliminar desde la API
         
-        clienteAxios.delete(`https://my-json-server.typicode.com/estevg/Crud-react-y-redux-hooks/productos/${id}`)
+        clienteAxios.delete(`https://serene-scrubland-47940.herokuapp.com/productos/${id}`)
         .then(respuesta => {
             console.log(respuesta)
             dispatch( eliminarProductoExito(id) )
@@ -135,7 +128,7 @@ export function obtenerProductoEditarAction(id) {
         dispatch( obtenerProductoAction() );
 
         // Obtener el producto de la api
-        clienteAxios.get(`https://my-json-server.typicode.com/estevg/Crud-react-y-redux-hooks/productos/${id}`)
+        clienteAxios.get(`https://serene-scrubland-47940.herokuapp.com/productos/${id}`)
         .then(respuesta => {
             // console.log(respuesta.data)
             dispatch( obtenerProductoEditarExito(respuesta.data))
@@ -165,7 +158,7 @@ export function editarProductoAction(producto){
         dispatch( comenzarEdicionProducto() )
 
         // Consultar la API
-        clienteAxios.put(`https://my-json-server.typicode.com/estevg/Crud-react-y-redux-hooks/productos/${producto.id}`, producto)
+        clienteAxios.put(`https://serene-scrubland-47940.herokuapp.com/productos/${producto.id}`, producto)
         .then(respuesta => {
             console.log(respuesta)
             dispatch(editarProductoExito(respuesta.data))

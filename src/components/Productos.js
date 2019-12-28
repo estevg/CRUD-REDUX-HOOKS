@@ -25,8 +25,9 @@ const Productos = () => {
     const loading = useSelector((state => state.productos.loading));
     const error = useSelector((state => state.productos.error ));
     const productos = useSelector((state => state.productos.productos));
+    console.log(productos)
 
-
+   
 
     return ( 
         <React.Fragment>
@@ -44,7 +45,7 @@ const Productos = () => {
                         <tbody>
                             {productos.map( producto => (
                                 <Producto 
-                                key={producto.id}
+                                key={producto._id}
                                 producto={producto}
                                 />
                             ))}

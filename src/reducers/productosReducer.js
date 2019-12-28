@@ -77,7 +77,7 @@ export default function(state = iniatialState, action){
         case PRODUCTO_ELIMINADO_EXITO:
             return {
                 ...state,
-                productos: state.productos.filter( producto => producto.id !== action.payload )
+                productos: state.productos.filter( producto => producto._id !== action.payload )
             }
         case PRODUCTO_ELIMINADO_ERROR: 
             return {
@@ -111,7 +111,7 @@ export default function(state = iniatialState, action){
                 ...state,
                 error: null,
                 productos: state.productos.map(
-                    producto => producto.id === action.payload.id ? producto = action.payload : producto
+                    producto => producto._id === action.payload._id ? producto = action.payload : producto
                 )
             }
         case PRODUCTO_EDITADO_ERROR:

@@ -8,7 +8,7 @@ import { borrarProductoAction } from '../actions/productosActions'
 
 
 const Producto = ({producto}) => {
-    const {id, nombre, precio} = producto
+    const {_id, nombre, precio} = producto
 
     const dispatch = useDispatch();
 
@@ -45,12 +45,12 @@ const Producto = ({producto}) => {
             <td>{nombre}</td>
             <td> <span className="font-weight-bold">$ {precio} </span></td>
             <td className="acciones">
-                <Link to={`/productos/editar/${id}`} className="btn btn-primary mr-2">
+                <Link to={`/productos/editar/${_id}`} className="btn btn-primary mr-2">
                     Editar
                 </Link>
                 <button  
                 className="btn btn-danger"
-                onClick={  () => confirmarEliminarProducto(id) }
+                onClick={  () => confirmarEliminarProducto(_id) }
                 >
                     Eliminar
                 </button>
